@@ -25,7 +25,6 @@ const StyledLabel = styled.label`
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: ${({ selected }) => (selected ? ' #474747' : '#fff')}; */
     background: #fff;
     /* color: ${(props) => props.theme.gray}; */
     color: gray;
