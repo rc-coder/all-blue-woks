@@ -1,3 +1,5 @@
+'use client';
+
 import { Title } from './components/Title';
 import WoksMenu from './components/WoksMenu';
 

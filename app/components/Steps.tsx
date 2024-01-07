@@ -8,7 +8,7 @@ export const Steps = styled.section`
   height: 20vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   position: relative;
 
   & .numberL {
