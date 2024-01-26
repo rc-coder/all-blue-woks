@@ -41,7 +41,7 @@ const TileMenu = () => {
   return (
     <form className="">
       <StyledGrid>
-        <div className="row-span-4 border-2 border-white p-2 m-4 md:m-0">
+        <div className="row-span-4 border-2 border-white p-2 m-0 panel">
           <div className="bg-white h-full w-full">
             <Title>
               <div className="container">
@@ -50,7 +50,7 @@ const TileMenu = () => {
             </Title>
           </div>
         </div>
-        <div className="row-span-4 border-2 border-blue-600 bg-white p-2 m-4 md:m-0 panel">
+        <div className="row-span-4 border-2 border-blue-600 bg-white p-2 m-0 panel">
           <div className="bg-blue-600 h-full w-full">
             <TileText>
               <span className="number">1</span>
@@ -63,7 +63,7 @@ const TileMenu = () => {
             </TileText>
           </div>
         </div>
-        <div className="col-span-2 row-span-4 border-2 border-slate-50 bg-red-600 m-4 md:m-0 p-10">
+        <div className="col-span-2 row-span-4 border-2 border-slate-50 bg-red-600 m-0 p-10 panel">
           <TitleContainer>
             <section className="h-full w-full grid grid-cols-2 p-5 gap-5 relative">
               <BaseTitle className="sectionTitle">Bases</BaseTitle>
@@ -79,7 +79,7 @@ const TileMenu = () => {
             </section>
           </TitleContainer>
         </div>
-        <div className="row-span-4 col-start-1 row-start-5 border-2 border-green-500 bg-white p-2 m-4 md:m-0">
+        <div className="row-span-4 col-start-1 row-start-5 border-2 border-green-500 bg-white p-2 m-0 panel">
           <div className="bg-green-500 h-full w-full">
             <TileText>
               <span className="number">2</span>
@@ -89,7 +89,7 @@ const TileMenu = () => {
             </TileText>
           </div>
         </div>
-        <div className="col-span-2 row-span-4 col-start-3 row-start-5 border-2 border-slate-50 bg-orange-500 m-4 md:m-0 p-10">
+        <div className="col-span-2 row-span-4 col-start-3 row-start-5 border-2 border-slate-50 bg-orange-500 m-0 p-10 panel">
           <TitleContainer>
             <section className="h-full w-full grid grid-cols-3 p-5 gap-8 relative">
               <VegTitle className="sectionTitle">Vegetales</VegTitle>
@@ -105,7 +105,7 @@ const TileMenu = () => {
             </section>
           </TitleContainer>
         </div>
-        <div className="row-span-4 col-start-2 row-start-5 border-2 border-slate-50 bg-yellow-500 m-4 md:m-0 py-12">
+        <div className="row-span-4 col-start-2 row-start-5 border-2 border-slate-50 bg-yellow-500 m-0 py-12 panel">
           <TitleContainer>
             <section className="h-full w-full grid grid-cols-2 p-5 gap-5 relative">
               <ProtTitle className="sectionTitle">Proteínas</ProtTitle>
@@ -121,7 +121,7 @@ const TileMenu = () => {
             </section>
           </TitleContainer>
         </div>
-        <div className="row-span-4 row-start-9 border-2 border-yellow-400 bg-white p-2 m-4 md:m-0">
+        <div className="row-span-4 row-start-9 border-2 border-yellow-400 bg-white p-2 m-0 panel">
           <div className="bg-yellow-400 h-full w-full">
             <TileText>
               <span className="number">3</span>
@@ -131,7 +131,7 @@ const TileMenu = () => {
             </TileText>
           </div>
         </div>
-        <div className="col-span-2 row-span-4 row-start-9 border-2 border-slate-50 bg-purple-600 m-4 md:m-0 p-10">
+        <div className="col-span-2 row-span-4 row-start-9 border-2 border-slate-50 bg-purple-600 m-0 p-10 panel">
           <TitleContainer>
             <section className="h-full w-full grid grid-cols-2 p-5 gap-8 relative">
               <SalsaTitle className="sectionTitle">Salsas</SalsaTitle>
@@ -147,7 +147,7 @@ const TileMenu = () => {
             </section>
           </TitleContainer>
         </div>
-        <div className="row-span-4 col-start-4 row-start-9 border-2 border-slate-50 bg-blue-600 m-4 md:m-0 py-12">
+        <div className="row-span-4 col-start-4 row-start-9 border-2 border-slate-50 bg-blue-600 m-0 py-12 panel">
           <TitleContainer>
             <section className="h-full w-full grid grid-cols-2 p-5 gap-8 relative">
               <ToppingsTitle className="sectionTitle">Toppings</ToppingsTitle>

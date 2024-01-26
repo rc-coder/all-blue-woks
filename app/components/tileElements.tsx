@@ -9,25 +9,20 @@ export const StyledGrid = styled.div`
   width: 100%;
   grid-template-columns: repeat(4, minmax(0, max-content));
   grid-template-rows: repeat(12, minmax(0, max-content));
-  /* display: flex;
-  flex-wrap: wrap; */
 
-  /* & .panel {
-    flex: 1 1;
-    width: 100%;
-  } */
-
-  /* @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    gap: 0;
-  } */
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0;
 
-  /* & .panel {
-    border-width: 3px 4px 3px 5px;
-    border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
-    transform: rotate(2deg);
-  } */
+    & .panel {
+      margin: 0 1rem;
+      min-height: 80vh;
+    }
+  }
 `;
 
 export const Title = styled.div`
@@ -39,7 +34,7 @@ export const Title = styled.div`
   display: grid;
   place-items: center;
   justify-content: center;
-  /* min-height: calc(100vh - 16px); */
+  min-height: calc(50vh - 16px);
 
   & h1 {
     font-family: var(--font-inter);
@@ -72,6 +67,10 @@ export const Title = styled.div`
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+
+    @media screen and (max-width: 768px) {
+      font-size: 20vw;
+    }
   }
 
   & .container {
@@ -114,12 +113,6 @@ export const Title = styled.div`
         transparent 0.25%
       );
   }
-
-  /* @media screen and (min-width: 768px) {
-    h1 {
-      font-size: 6.5rem;
-    }
-  } */
 `;
 
 export const TileText = styled.div`
@@ -133,6 +126,9 @@ export const TileText = styled.div`
   color: black;
   text-shadow: 1px 1px 2px black;
 
+  @media screen and (max-width: 768px) {
+    padding: 0px;
+  }
   & h2 {
     text-transform: uppercase;
     text-align: center;
@@ -191,8 +187,6 @@ export const TileText = styled.div`
   & .number {
     display: inline-block;
     color: white;
-    /* font-family: 'Righteous', serif; */
-    /* font-family: var(--font-fraunces); */
     font-size: 5rem;
     text-shadow: -0.06em 0.04em 0 hsla(240, 40%, 40%, 1);
     position: absolute;
