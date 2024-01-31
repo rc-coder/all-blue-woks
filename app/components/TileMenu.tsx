@@ -19,13 +19,15 @@ import {
 } from './tileElements';
 import StyledInput from './StyledInput';
 import { useOrderStore } from '@/store/orderStore';
+import { useRouter } from 'next/navigation';
 
 const TileMenu = () => {
+  const router = useRouter();
   const { base, proteina, vegetales, salsa, topping } = useOrderStore(
     (state) => state
   );
 
-  const handleClick = (e: any) => {
+  const submitOrder = (e: any) => {
     e.preventDefault();
 
     const order = {
@@ -37,9 +39,11 @@ const TileMenu = () => {
     };
 
     console.log(order);
+
+    router.push('/Order');
   };
   return (
-    <form className="">
+    <form onSubmit={submitOrder} action={'/Order'}>
       <StyledGrid>
         <div className="row-span-4 border-2 border-white p-2 m-0 panel">
           <div className="bg-white h-full w-full">
@@ -166,7 +170,6 @@ const TileMenu = () => {
       </StyledGrid>
       <button
         type="submit"
-        onClick={handleClick}
         className="border bg-slate-600 border-slate-300 text-slate-300 px-2 py-1 rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none"
       >
         Enviar pedido
