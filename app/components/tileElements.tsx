@@ -16,11 +16,11 @@ export const StyledGrid = styled.div`
     gap: 1rem;
     width: 100%;
     height: 100%;
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
 
     & .panel {
       margin: 0 1rem;
-      min-height: 80vh;
+      height: 80vh;
     }
   }
 `;
@@ -268,6 +268,43 @@ export const TitleContainer = styled.div`
       background-size: 100% 100%;
       background-position: 0% 100%;
       transition: background-position 0.7s, background-size 0.5s ease-in-out;
+    }
+  }
+`;
+
+export const Button = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --tw-bg-opacity: 1;
+  background-color: white;
+  transition: all 0.5s;
+
+  &:hover {
+    background-color: black;
+  }
+
+  & button {
+    width: 100%;
+    color: black;
+    background-color: white;
+    padding: 0.8rem;
+    border: 4px solid black;
+    margin: 2px;
+    text-shadow: 0.5px 0.5px 1px black;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: var(--font-fraunces);
+    font-weight: 800;
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: black;
+      color: white;
+      border: 4px solid white;
+      text-shadow: 0.5px 0.5px 1px white;
     }
   }
 `;

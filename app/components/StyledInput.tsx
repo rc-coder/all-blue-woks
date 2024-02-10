@@ -1,5 +1,6 @@
 'use client';
 
+import { formatPrice } from '@/public/assets/utils/format';
 import { useOrderStore } from '@/store/orderStore';
 import styled from 'styled-components';
 
@@ -24,6 +25,13 @@ const StyledLabel = styled.label`
   font-weight: 600;
   font-size: 1.2rem;
   text-shadow: 1px 1px 2px black;
+
+  & span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
   & input:checked ~ .imgContainer {
     background-color: var(--midnightGreen);
@@ -60,48 +68,18 @@ export const InputImage = styled.div<ImageProps>`
   transition: all 0.2s;
 `;
 
-// const StyledLabel = styled.label`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   text-align: center;
-//   width: 100%;
-
-//   & input:checked ~ .imgContainer {
-//     background-color: var(--midnightGreen);
-//   }
-
-//   & .imgContainer {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     background: var(--verdigris);
-//     /* color: ${(props) => props.theme.gray}; */
-//     color: gray;
-//     box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.09);
-//     border-radius: 10%;
-//     cursor: pointer;
-//     /* margin: 0 10px; */
-//     height: 60px;
-//     width: 60px;
-//     transition: all 0.5s;
-
-//     &:hover {
-//       background: var(--midnightGreen);
-//       box-shadow: none;
-//     }
-//   }
-// `;
-
 const StyledInput = ({ option, imgurl, price, name }: InputProps) => {
   const {
     setBase,
     setProteina,
     setVegetales,
+    removeVegetal,
     setSalsa,
     setTopping,
     setExtras,
+    removeExtra,
+    vegetales,
+    extras,
   } = useOrderStore((state) => state);
 
   const chooseBase = (e: any) => {
@@ -121,7 +99,14 @@ const StyledInput = ({ option, imgurl, price, name }: InputProps) => {
   const chooseVegs = (e: any) => {
     const name = e.target.value;
     const price = e.target.getAttribute('data-price');
-    setVegetales(name, price);
+
+    const vegNames = vegetales.map((veg) => veg.name);
+
+    if (vegNames.includes(name)) {
+      removeVegetal(name);
+    } else {
+      setVegetales(name, price);
+    }
   };
 
   const chooseSalsa = (e: any) => {
@@ -142,7 +127,13 @@ const StyledInput = ({ option, imgurl, price, name }: InputProps) => {
     const name = e.target.value;
     const price = e.target.getAttribute('data-price');
 
-    setExtras(name, price);
+    const extNames = extras.map((ext) => ext.name);
+
+    if (extNames.includes(name)) {
+      removeExtra(name);
+    } else {
+      setExtras(name, price);
+    }
   };
 
   switch (name) {
@@ -155,12 +146,14 @@ const StyledInput = ({ option, imgurl, price, name }: InputProps) => {
             value={option}
             className="absolute opacity-0 cursor-pointer h-0 w-0"
             onChange={chooseBase}
-            data-price={price}
+            data-price={price ? price : 0}
           ></input>
           <div className="imgContainer">
             <InputImage img={imgurl} className="checked" />
           </div>
-          {option}
+          <span>
+            {option} {formatPrice(price)}
+          </span>
         </StyledLabel>
       );
     case 'proteina':
@@ -172,12 +165,14 @@ const StyledInput = ({ option, imgurl, price, name }: InputProps) => {
             value={option}
             className="absolute opacity-0 cursor-pointer h-0 w-0"
             onChange={chooseProt}
-            data-price={price}
+            data-price={price ? price : 0}
           ></input>
           <div className="imgContainer">
             <InputImage img={imgurl} className="checked" />
           </div>
-          {option}
+          <span>
+            {option} {formatPrice(price)}
+          </span>
         </StyledLabel>
       );
     case 'vegetales':
@@ -189,12 +184,14 @@ const StyledInput = ({ option, imgurl, price, name }: InputProps) => {
             value={option}
             className="absolute opacity-0 cursor-pointer h-0 w-0"
             onChange={chooseVegs}
-            data-price={price}
+            data-price={price ? price : 0}
           ></input>
           <div className="imgContainer">
             <InputImage img={imgurl} className="checked" />
           </div>
-          {option}
+          <span>
+            {option} {formatPrice(price)}
+          </span>
         </StyledLabel>
       );
     case 'salsas':
@@ -206,12 +203,14 @@ const StyledInput = ({ option, imgurl, price, name }: InputProps) => {
             value={option}
             className="absolute opacity-0 cursor-pointer h-0 w-0"
             onChange={chooseSalsa}
-            data-price={price}
+            data-price={price ? price : 0}
           ></input>
           <div className="imgContainer">
             <InputImage img={imgurl} className="checked" />
           </div>
-          {option}
+          <span>
+            {option} {formatPrice(price)}
+          </span>
         </StyledLabel>
       );
     case 'toppings':
@@ -223,12 +222,14 @@ const StyledInput = ({ option, imgurl, price, name }: InputProps) => {
             value={option}
             className="absolute opacity-0 cursor-pointer h-0 w-0"
             onChange={chooseTop}
-            data-price={price}
+            data-price={price ? price : 0}
           ></input>
           <div className="imgContainer">
             <InputImage img={imgurl} className="checked" />
           </div>
-          {option}
+          <span>
+            {option} {formatPrice(price)}
+          </span>
         </StyledLabel>
       );
     case 'extras':
@@ -240,12 +241,14 @@ const StyledInput = ({ option, imgurl, price, name }: InputProps) => {
             value={option}
             className="absolute opacity-0 cursor-pointer h-0 w-0"
             onChange={chooseTop}
-            data-price={price}
+            data-price={price ? price : 0}
           ></input>
           <div className="imgContainer">
             <InputImage img={imgurl} className="checked" />
           </div>
-          {option}
+          <span>
+            {option} {formatPrice(price)}
+          </span>
         </StyledLabel>
       );
     default:

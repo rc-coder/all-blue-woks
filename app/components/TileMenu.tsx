@@ -16,6 +16,7 @@ import {
   SalsaTitle,
   ToppingsTitle,
   TitleContainer,
+  Button,
 } from './tileElements';
 import StyledInput from './StyledInput';
 import { useOrderStore } from '@/store/orderStore';
@@ -43,7 +44,11 @@ const TileMenu = () => {
     router.push('/Order');
   };
   return (
-    <form onSubmit={submitOrder} action={'/Order'}>
+    <form
+      onSubmit={submitOrder}
+      action={'/Order'}
+      className="flex flex-col gap-4 py-4 md:py-0"
+    >
       <StyledGrid>
         <div className="row-span-4 border-2 border-white p-2 m-0 panel">
           <div className="bg-white h-full w-full">
@@ -95,7 +100,7 @@ const TileMenu = () => {
         </div>
         <div className="col-span-2 row-span-4 col-start-3 row-start-5 border-2 border-slate-50 bg-orange-500 m-0 p-10 panel">
           <TitleContainer>
-            <section className="h-full w-full grid grid-cols-3 p-5 gap-8 relative">
+            <section className="h-full w-full grid grid-cols-2 p-5 gap-8 relative">
               <VegTitle className="sectionTitle">Vegetales</VegTitle>
               {vegs.map((veg) => (
                 <StyledInput
@@ -168,12 +173,9 @@ const TileMenu = () => {
           </TitleContainer>
         </div>
       </StyledGrid>
-      <button
-        type="submit"
-        className="border bg-slate-600 border-slate-300 text-slate-300 px-2 py-1 rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none"
-      >
-        Enviar pedido
-      </button>
+      <Button>
+        <button type="submit"> Enviar pedido</button>
+      </Button>
     </form>
   );
 };

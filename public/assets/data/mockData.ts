@@ -132,13 +132,13 @@ export const salsas: Options[] = [
   {
     id: 43,
     img: '',
-    name: 'Kung Pao: a base de maní',
+    name: 'Kung Pao (a base de maní)',
     price: '100',
   },
   {
     id: 44,
     img: '',
-    name: 'Hong Kong: a base de ciruelas',
+    name: 'Hong Kong (a base de ciruelas)',
     price: '100',
   },
   {
@@ -150,7 +150,7 @@ export const salsas: Options[] = [
   {
     id: 46,
     img: '',
-    name: 'Beijing: a base de Ostras',
+    name: 'Beijing (a base de Ostras)',
     price: '100',
   },
 ];
